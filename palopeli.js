@@ -234,6 +234,9 @@ $(document).ready(function() {
     if( cameraX > 0 ){
       cameraX = 0;
     }
+    else if( cameraX < -levelW + canvW){
+      cameraX = -levelW + canvW;
+    }
     mouseDown = false;
   }
 
@@ -356,7 +359,12 @@ $(document).ready(function() {
       if(cameraX + xClickDelta > 0){
         ctx.drawImage(levelCnvs, 0, 0);
 
-      } else {
+      }
+      else if (cameraX + xClickDelta < -levelW + canvW){
+
+        ctx.drawImage(levelCnvs, -levelW + canvW, 0);
+      }
+       else {
 
         ctx.drawImage(levelCnvs, cameraX + xClickDelta, 0);
       }

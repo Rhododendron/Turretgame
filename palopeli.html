@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Palopeli</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+  <div>Score:<span id="score">0</span><span><button id = "restart">Restart!</button><button id = "pause">Pause</button></span></div>
+  <canvas id=viewCanvas width = "400" height = "320"></canvas>
+  <div>Level: <span id="levelCounter">1</span></div>
+  <div><input type="button" id="shoot" value = "SHOOT!"></div>
+  <div><button id="powerMinus" class="controlButton">-</button><span id="power">0</span><button id="powerPlus" class="controlButton">+</button></div>
+  <div><button id="angleMinus" class="controlButton">-</button><span id="angle">0</span><button id="anglePlus" class="controlButton">+</button></div>
+  <div><button id = "sendScore">Send Highscore</button></div>
+  <div><button id = "save">Save Game</button></div>
+  <div><button id = "load">Load Game</button></div>
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src = palopeli.js></script>
+  <canvas id="gameCanvas" width ="800" height="320" hidden="true"></canvas>
+  <canvas id="groundCanvas" width = "800" height = "200" hidden="true"></canvas>
+  <canvas id="skyCanvas" width = "800" height = "320" hidden ="true"></canvas>
+  </body>
+</html>

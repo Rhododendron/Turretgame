@@ -1,5 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+<!-- A scrolling turret game
+
+An experiment on mouse drag scroll on canvas. Use mouse scrolling to look for targets
+and adjust your aim accordingly. Don't let too many targets spawn or your game ends!
+
+The hit registration is a bit sketchy, it's usually good idea to try to hit slighty in front of the target blocks.
+Some inconsistencies happen because the collision is checked only once per frame and the particular moment may or
+may not be in the collision area.
+
+The sky, ground and level in general are hidden subcanvases for quick and easy access. The whole game
+world is always drawn hidden and the scrolling part is then projected from the full level view.
+
+Scrolling is implemented through 3 event handling functions that register mouse down, mouse up and movement while keeping mouse down.
+In both ends of the level view, overscrolling is prohibited through value checking.
+
+The javascript code is a mess and probably causes some bugs. Would love to clean up, but the deadline is approaching.
+
+Save game only saves level and score values.
+-->
   <head>
     <meta charset="utf-8">
     <title>Scrolling Artillery!</title>

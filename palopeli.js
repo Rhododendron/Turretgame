@@ -403,7 +403,7 @@ $(document).ready(function() {
       levelUp();
     }
 
-    if(targetsRemaining.length > 3){
+    if(targetsRemaining.length > 6){
 
       gameOver = true;
     }
@@ -641,7 +641,7 @@ $(document).ready(function() {
   function receiveMessage(event){
 
       if(event.data.messageType === "LOAD"){
-
+        
         clearTargets;
         paused = true;
 
@@ -650,11 +650,14 @@ $(document).ready(function() {
 
         updateScore(score);
         updateLevel();
+
+
       }
 
       else if(event.data.messageType === "ERROR"){
 
-        system.log(even.data.info);
+        $("#Errormessages").append("ERROR!: " + event.data.info);
+        $("#Errormessages").attr("hidden", false);
       }
 
       else {

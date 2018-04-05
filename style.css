@@ -1,7 +1,13 @@
 .controlButton{
 
-  width: 190px;
+  width: 150px;
 }
+
+.firingSpec{
+  padding: 10px;
+
+}
+
 
 #shoot{
     background-color: #dd9c33;

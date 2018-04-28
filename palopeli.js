@@ -88,7 +88,6 @@ $(document).ready(function() {
 
         if(Math.abs(shot.get_x() - targetsRemaining[index].get_x()) < 10  ){
 
-          console.log("hit")
           score += targetsRemaining[index].get_x();
           updateScore(score);
           hitsToLevelup--;
@@ -376,7 +375,7 @@ $(document).ready(function() {
 
     new Target(getRandomInt(targetRangeMin, targetRangeMax));
     lastTargetSpawn = Date.now();
-    console.log("New Target spawned!")
+
   }
 
   // Clears all targets
@@ -525,7 +524,6 @@ $(document).ready(function() {
 
   $("#powerPlus").click(function(){
 
-      console.log("PowerPlus!")
       if(currPower < (powerMax - powerStep)){
 
         currPower += powerStep;
@@ -542,7 +540,6 @@ $(document).ready(function() {
   // Angles
   $("#anglePlus").click(function(){
 
-      console.log("anglePlus!");
       if(currAngle < (angleMax - angleStep)){
 
         currAngle += angleStep;
@@ -627,7 +624,7 @@ $(document).ready(function() {
     }
     )
 
-  $("sendScore").click( function() {
+  $("#sendScore").click( function() {
 
     var msg = {
         "messageType": "SCORE",
@@ -641,7 +638,7 @@ $(document).ready(function() {
   function receiveMessage(event){
 
       if(event.data.messageType === "LOAD"){
-        
+
         clearTargets;
         paused = true;
 
@@ -662,8 +659,7 @@ $(document).ready(function() {
 
       else {
 
-        console.log("Unknown messagetype: " + event.data.messageType)
-      }
+        }
   }
 
   // Send the iframe dimension request to the parent
